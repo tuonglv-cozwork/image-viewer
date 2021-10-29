@@ -1,0 +1,54 @@
+<!-- Login Page -->
+<div class="container-fluid login-1">
+  <div class="container">
+    <div class="login-form">
+      <div class="row align-items-center">
+        <div class="col-md-6">
+          <div class="img-box">
+            <img
+              src="assets/images/login-img.png"
+              class="back-img"
+              title="login"
+              alt="welcome image"
+            />
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="login-box">
+            <form>
+              <div class="form-group">
+                <h4 class="login-title">Welcome back</h4>
+                <p class="login-p">Please login to your account.</p>
+              </div>
+              <div class="form-group">
+                <input
+                  type="text"
+                  placeholder="Enter your name"
+                  class="form-control"
+                  #username
+                />
+                <input
+                  type="password"
+                  placeholder="Enter your password"
+                  class="form-control"
+                  #password
+                />
+              </div>
+              <div class="input-group check-field">
+                <div>
+                  <input type="checkbox" id="test" name="test" value="" />
+                  <label class="ms-2" for="test"> Remember Me</label><br />
+                </div>
+              </div>
+              <div class="form-group text-center">
+                <button type="submit" (click)="onSubmit(username, password)" class="btn btn-primary">Login</button>
+                <p class="mb-0"><a href="#">New User? Sign Up</a></p>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Login Page -->
