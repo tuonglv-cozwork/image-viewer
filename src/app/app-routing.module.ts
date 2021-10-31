@@ -10,6 +10,7 @@ const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: 'home', redirectTo: 'home/image-list', pathMatch: 'full' },
   {
+    canActivate: [AuthServiceGuard],
     path: 'home',
     component: PageHomeComponent,
     children: [

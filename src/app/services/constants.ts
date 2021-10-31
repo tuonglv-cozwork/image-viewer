@@ -1,0 +1,1 @@
+export const FIND_ALL_IMG_BY_ID = "/image/find-by-user-id";

@@ -9,17 +9,19 @@ import { AuthService } from '../../services/login-service/auth.service';
 })
 export class LoginPageComponent implements OnInit {
 
-    constructor(private authService: AuthService, private router: Router) { }
+    constructor(private authService: AuthService, private router: Router,) { }
 
     ngOnInit(): void {
     }
 
     public onSubmit(username: any, password: any): void {
         this.authService.doLogin(username.value, password.value).then((rs) => {
-            console.log(rs);
+            console.log(rs, "success");
+            // this.router.navigateByUrl("/home/image-list");
         }).catch((err) => {
             console.log(err);
         });
+        // this.router.navigateByUrl("/home/image-list");
     }
 
 }

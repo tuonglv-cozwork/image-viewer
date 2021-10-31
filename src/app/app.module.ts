@@ -10,19 +10,24 @@ import { PageImgListComponent } from './pages/page-img-list/page-img-list.compon
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from "@angular/common/http";
 
+import { MatCardModule } from "@angular/material/card";
+import { WidgetImageCardComponent } from './widget/widget-image-card/widget-image-card.component';
+
 @NgModule({
   declarations: [
     AppComponent,
     LoginPageComponent,
     PageNotFoundComponent,
     PageHomeComponent,
-    PageImgListComponent
+    PageImgListComponent,
+    WidgetImageCardComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatCardModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

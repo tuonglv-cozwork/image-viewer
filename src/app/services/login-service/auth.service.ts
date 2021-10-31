@@ -9,8 +9,9 @@ export class AuthService {
     private readonly ACCESS_TOKEN = "ACCESS_TOKEN";
     private readonly REFRESH_TOKEN = "REFRESH_TOKEN";
     private uri = API_GATEWAY_URI + API_AUTHORIZATION_PATH;
-    
-    constructor(private http: HttpClient) { 
+    public headers: HttpHeaders | undefined;
+
+    constructor(private http: HttpClient) {
 
     }
 
@@ -29,14 +30,22 @@ export class AuthService {
             this.http.post<any>(this.uri + "/oauth/token", null, httpOptions).subscribe(
                 (data: any) => {
                     /** Set access token and refresh token to storage, set information user */
-                    localStorage.set(this.ACCESS_TOKEN, data.access_token);
-                    localStorage.set(this.REFRESH_TOKEN, data.refresh_token);
+                    localStorage.setItem(this.ACCESS_TOKEN, data.access_token);
+                    localStorage.setItem(this.REFRESH_TOKEN, data.refresh_token);
                     resolve(data);
                 },
                 (error: any) => {
                     reject(error);
                 }
             );
+            // this.http.post<any>(this.uri + "/oauth/token", null, httpOptions).toPromise().then((data) => {
+            //     localStorage.setItem(this.ACCESS_TOKEN, data.access_token);
+            //     localStorage.setItem(this.REFRESH_TOKEN, data.refresh_token);
+            //     resolve(data);
+            // }).catch((err) => {
+            //     console.log(err);
+            //     reject(err);
+            // })
         });
     }
 
@@ -61,5 +70,11 @@ export class AuthService {
     public doLogout(): void {
         localStorage.removeItem(this.ACCESS_TOKEN);
         localStorage.removeItem(this.REFRESH_TOKEN);
+    }
+
+    public getAuthHeader(): HttpHeaders {
+        return new HttpHeaders({
+            "Authorization": `Bearer ${this.findAccessToken()}`,
+        });
     }
 }

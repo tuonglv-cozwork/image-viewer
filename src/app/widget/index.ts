@@ -1,0 +1,1 @@
+export * from "./widget-image-card/widget-image-card.component"

@@ -1,0 +1,13 @@
+<mat-card class="container">
+  <img mat-card-image [src]="imageSrc" class="p-3" (dblclick)="onClickImage()" />
+  <mat-card-content>
+    <h2>
+      {{ description }}
+    </h2>
+  </mat-card-content>
+  <mat-card-footer>
+    <div class="w-100 p-3 pt-0 d-flex justify-content-end">
+      {{ date }}
+    </div>
+  </mat-card-footer>
+</mat-card>
