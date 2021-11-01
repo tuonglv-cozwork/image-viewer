@@ -4,11 +4,10 @@
 
 export const environment = {
     production: false,
-    API_GATEWAY_URI : "http://192.168.1.31:8080",
+    API_GATEWAY_URI: "http://localhost:8080",
     APPLICATION_NAME: "instagram-like-application",
     API_AUTHORIZATION_PATH: ""
-};
-
+}
 /*
  * For easier debugging in development mode, you can import the following file
  * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.

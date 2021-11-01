@@ -23,6 +23,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatSelectModule } from '@angular/material/select';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 import { WidgetImageCardComponent } from './widget/widget-image-card/widget-image-card.component';
 import { DialogUploadImageComponent } from './widget/dialog-upload-image/dialog-upload-image.component';
@@ -60,6 +61,7 @@ import { PageCreateAccountComponent } from './pages/page-create-account/page-cre
     MatDatepickerModule,
     MatNativeDateModule,
     MatSelectModule,
+    MatSnackBarModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

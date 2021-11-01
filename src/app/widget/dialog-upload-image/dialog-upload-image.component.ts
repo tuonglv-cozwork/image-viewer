@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { ImageService } from '../../services/image-service/image.service';
 
 @Component({
@@ -14,7 +15,7 @@ export class DialogUploadImageComponent implements OnInit {
     public imageName: string = "";
     public file: any;
 
-    constructor(private imageService: ImageService, public dialogRef: MatDialogRef<DialogUploadImageComponent>) { }
+    constructor(private imageService: ImageService, public dialogRef: MatDialogRef<DialogUploadImageComponent>, private _snackBar: MatSnackBar) { }
 
     ngOnInit(): void {
     }
@@ -36,8 +37,16 @@ export class DialogUploadImageComponent implements OnInit {
         if (this.formData && this.imageName.length > 0) {
             this.imageService.uploadImage(this.formData).then((data) => {
                 this.dialogRef.close();
+                this._snackBar.open("Upload successfully !", "x",{
+                    horizontalPosition: "center",
+                    verticalPosition: 'top',
+                });
             }).catch((err) => {
                 console.log(err);
+                this._snackBar.open("Upload fail !", "x", {
+                    horizontalPosition: "center",
+                    verticalPosition: 'top',
+                });
             })
         }
     }

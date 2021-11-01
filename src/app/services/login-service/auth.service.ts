@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
-import { APPLICATION_NAME, API_GATEWAY_URI, API_AUTHORIZATION_PATH, ACCESS_TOKEN, REFRESH_TOKEN } from '../../constants/common-constant';
+import { ACCESS_TOKEN, REFRESH_TOKEN } from '../../constants/common-constant';
+import { environment } from '../../../environments/environment';
 
 @Injectable({
     providedIn: 'root'
 })
 export class AuthService {
-    private uri = API_GATEWAY_URI + API_AUTHORIZATION_PATH;
+    private uri = environment.API_GATEWAY_URI + environment.API_AUTHORIZATION_PATH;
     public headers: HttpHeaders | undefined;
 
     constructor(private http: HttpClient) {
@@ -19,7 +20,7 @@ export class AuthService {
         const httpOptions = {
             headers: new HttpHeaders({
                 "Content-Type": "application/x-www-form-urlencoded",
-                Authorization: "Basic " + window.btoa(APPLICATION_NAME + ":" + "password"),
+                Authorization: "Basic " + window.btoa(environment.APPLICATION_NAME + ":" + "password"),
             }),
             params: new HttpParams().set("username", username).set("password", password).set("grant_type", "password"),
         };
