@@ -9,9 +9,25 @@ import { PageHomeComponent } from './pages/page-home/page-home.component';
 import { PageImgListComponent } from './pages/page-img-list/page-img-list.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from "@angular/common/http";
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 
 import { MatCardModule } from "@angular/material/card";
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatSelectModule } from '@angular/material/select';
+
 import { WidgetImageCardComponent } from './widget/widget-image-card/widget-image-card.component';
+import { DialogUploadImageComponent } from './widget/dialog-upload-image/dialog-upload-image.component';
+import { DialogImageDetailComponent } from './widget/dialog-image-detail/dialog-image-detail.component';
+import { PageCreateAccountComponent } from './pages/page-create-account/page-create-account.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +36,10 @@ import { WidgetImageCardComponent } from './widget/widget-image-card/widget-imag
     PageNotFoundComponent,
     PageHomeComponent,
     PageImgListComponent,
-    WidgetImageCardComponent
+    WidgetImageCardComponent,
+    DialogUploadImageComponent,
+    DialogImageDetailComponent,
+    PageCreateAccountComponent,
   ],
   imports: [
     BrowserModule,
@@ -28,6 +47,19 @@ import { WidgetImageCardComponent } from './widget/widget-image-card/widget-imag
     BrowserAnimationsModule,
     HttpClientModule,
     MatCardModule,
+    MatDialogModule,
+    MatButtonModule,
+    MatIconModule,
+    MatFormFieldModule,
+    MatInputModule,
+    FormsModule,
+    InfiniteScrollModule,
+    MatToolbarModule,
+    MatProgressSpinnerModule,
+    ReactiveFormsModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatSelectModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

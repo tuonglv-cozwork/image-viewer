@@ -20,8 +20,4 @@ export class WidgetImageCardComponent implements OnInit {
 
     public ngOnInit(): void {
     }
-
-    public onClickImage(): void {
-        console.log("hello wolrd");
-    }
 }

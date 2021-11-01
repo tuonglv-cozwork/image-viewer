@@ -1,4 +1,13 @@
-<div>
-    this is tool bar
-</div>
+<mat-toolbar color="primary" class="d-flex justify-content-between flex-wrap" class="page-header">
+  <span>Image Viewer</span>
+  <span class="spacer"> </span>
+  <button mat-raised-button (click)="onUpLoadImage()" class="me-2">
+    <span>Upload</span>
+    <mat-icon>upload</mat-icon>
+  </button>
+  <button mat-raised-button (click)="onLogOut()">
+    <span>Log Out</span>
+    <mat-icon>logout</mat-icon>
+  </button>
+</mat-toolbar>
 <router-outlet></router-outlet>

@@ -1,0 +1,36 @@
+<div class="d-flex flex-column">
+  <div class="d-flex align-items-center">
+    <div class="me-3">Upload image:</div>
+    <div>
+      <button type="button" mat-raised-button (click)="fileInput.click()">
+        Choose File
+      </button>
+      <input
+        hidden
+        (change)="onFileSelected($event)"
+        #fileInput
+        type="file"
+        id="file"
+         accept=".jpeg,.jpg,.png"
+      />
+    </div>
+  </div>
+  <div class="mt-4">
+      <span class="me-3">Image's name: </span>
+      <span>{{ imageName }}</span>
+  </div>
+  <mat-form-field appearance="outline" class="mt-4">
+    <mat-label>Description</mat-label>
+    <input matInput placeholder="Enter description here" [(ngModel)]="description" />
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-raised-button mat-dialog-close color="warn">
+    <mat-icon>close</mat-icon>
+    <span>Close</span>
+  </button>
+  <button mat-raised-button color="primary" (click)="onClickUpload()">
+    <mat-icon>file_upload</mat-icon>
+    <span>Upload</span>
+  </button>
+</div>

@@ -1,3 +1,14 @@
-<div class="container d-flex justify-content-center">
-  <widget-image-card class="w-50 glassy-background" [imageSrc]="imageSrc" [description]="description" [date]="date" ></widget-image-card>
+<div class="container d-flex align-items-center flex-column" infiniteScroll (scrolled)="findImage(true)" [infiniteScrollDistance]="0.5">
+  <ng-container *ngIf="images.length > 0">
+    <widget-image-card
+      *ngFor="let item of images"
+      class="w-50 glassy-background my-2"
+      [imageSrc]="item.image_url"
+      [description]="item?.description ? item.description : ''"
+      [date]="dateFormater(item.created_at)"
+      (dblclick)="onImageDetail(item.image_url)"
+    ></widget-image-card>
+  </ng-container>
+  <div *ngIf="images.length === 0" class="my-3">There is no image.</div>
+  <mat-spinner diameter="50" class="my-3" *ngIf="isLoading"></mat-spinner>
 </div>
