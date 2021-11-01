@@ -24,6 +24,6 @@ export class PageHomeComponent implements OnInit {
 
     public onLogOut(): void {
         this.authService.doLogout();
-        this.router.navigateByUrl("/")
+        this.router.navigateByUrl("/");
     }
 }

@@ -11,17 +11,21 @@
         #fileInput
         type="file"
         id="file"
-         accept=".jpeg,.jpg,.png"
+        accept=".jpeg,.jpg,.png"
       />
     </div>
   </div>
   <div class="mt-4">
-      <span class="me-3">Image's name: </span>
-      <span>{{ imageName }}</span>
+    <span class="me-3">Image's name: </span>
+    <span>{{ imageName }}</span>
   </div>
   <mat-form-field appearance="outline" class="mt-4">
     <mat-label>Description</mat-label>
-    <input matInput placeholder="Enter description here" [(ngModel)]="description" />
+    <input
+      matInput
+      placeholder="Enter description here"
+      [(ngModel)]="description"
+    />
   </mat-form-field>
 </div>
 <div mat-dialog-actions>

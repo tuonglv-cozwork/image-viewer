@@ -28,7 +28,6 @@ export class ImageService {
 
     public addNewAccount(body: any): Promise<any> {
         let url = API_GATEWAY_URI + ADD_NEW_ACCOUNT;
-        let httpOption = this.httpOption;
-        return this.http.put(url, body, httpOption).toPromise();
+        return this.http.put(url, body).toPromise();
     }
 }
